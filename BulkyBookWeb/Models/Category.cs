@@ -1,0 +1,19 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BulkyBookWeb.Models
+{
+    public class Category
+    {
+        [Key]// primary key of this table
+        public int Id { get; set; }
+
+        [Required]  
+        public String Name { get; set; }
+
+        [DisplayAttribute(Name = "Display Name")]
+        [Range(1,100, ErrorMessage ="Display Order must be between 1 and 100 only!!")]        
+        public int DisplayOrder { get; set; }
+
+        public DateTime CreatedDateTime { get; set; } = DateTime.Now;
+    }
+}
